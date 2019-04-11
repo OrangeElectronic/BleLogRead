@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android.bluetoothlegatt"
+    android:targetSandboxVersion="2"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="27" />
+    <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
+    <!--
+ Declare this required feature if you want to make the app available to BLE-capable
+    devices only.  If you want to make your app available to devices that don't support BLE,
+    you should omit this in the manifest.  Instead, determine BLE capability by using
+    PackageManager.hasSystemFeature(FEATURE_BLUETOOTH_LE)
+    -->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:debuggable="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:testOnly="true"
+        android:theme="@android:style/Theme.Holo.Light" >
+        <activity
+            android:name="com.example.android.bluetoothlegatt.ScanModel.ScanActivity"
+            android:label="@string/scanmodel"
+            android:theme="@style/Th" />
+        <activity android:name="com.example.android.bluetoothlegatt.ConnectModel.DeviceScanActivity" />
+        <activity
+            android:name="com.example.android.bluetoothlegatt.SelecModel"
+            android:label="@string/selectmodel"
+            android:theme="@style/Th" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.android.bluetoothlegatt.ConnectModel.DeviceControlActivity" />
+
+        <service
+            android:name="com.example.android.bluetoothlegatt.ConnectModel.BluetoothLeService"
+            android:enabled="true" />
+    </application>
+
+</manifest>
