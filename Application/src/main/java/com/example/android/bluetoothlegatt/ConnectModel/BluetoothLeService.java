@@ -41,7 +41,7 @@ import java.util.UUID;
  */
 public class BluetoothLeService extends Service {
     private final static String TAG = BluetoothLeService.class.getSimpleName();
-
+    boolean writesuccess=true;
     private BluetoothManager mBluetoothManager;
     private BluetoothAdapter mBluetoothAdapter;
     private String mBluetoothDeviceAddress;
@@ -104,13 +104,33 @@ public class BluetoothLeService extends Service {
                                          int status) {
             if (status == BluetoothGatt.GATT_SUCCESS) {
                 broadcastUpdate(ACTION_DATA_AVAILABLE, characteristic);
+                byte []b=characteristic.getValue();
+                String a="";
+                for(int i=0;i<b.length;i++){
+                    a=a+ String.format("%02X ", b[i])+":";
+                }
+                Log.w("show", "讀取成功:"+a );
             }
         }
-
+@Override
+public void onCharacteristicWrite(BluetoothGatt gatt,BluetoothGattCharacteristic characteristic,int status){
+    byte []b=characteristic.getValue();
+    String a="";
+    for(int i=0;i<b.length;i++){
+        a=a+ String.format("%02X ", b[i])+":";
+    }
+    Log.w("show", "傳送數據:"+a );
+}
         @Override
         public void onCharacteristicChanged(BluetoothGatt gatt,
                                             BluetoothGattCharacteristic characteristic) {
             broadcastUpdate(ACTION_DATA_AVAILABLE, characteristic);
+            byte []b=characteristic.getValue();
+            String a="";
+            for(int i=0;i<b.length;i++){
+                a=a+ String.format("%02X ", b[i])+":";
+            }
+            Log.w("show", "返回數據:"+a );
         }
     };
 
@@ -288,6 +308,7 @@ public class BluetoothLeService extends Service {
      * @param characteristic Characteristic to act on.
      * @param enabled If true, enable notification.  False otherwise.
      */
+boolean descripe=true;
     public void setCharacteristicNotification(BluetoothGattCharacteristic characteristic,
                                               boolean enabled) {
         if (mBluetoothAdapter == null || mBluetoothGatt == null) {
@@ -296,13 +317,18 @@ public class BluetoothLeService extends Service {
         }
         mBluetoothGatt.setCharacteristicNotification(characteristic, enabled);
 
-        // This is specific to Heart Rate Measurement.
-        if (UUID_HEART_RATE_MEASUREMENT.equals(characteristic.getUuid())) {
-            BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
-                    UUID.fromString(SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG));
-            descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
-            mBluetoothGatt.writeDescriptor(descriptor);
-        }
+  if((""+characteristic.getUuid()).equals("00008d81-0000-1000-8000-00805f9b34fb")){
+      if(descripe){
+          Log.w("UUID", ""+characteristic.getUuid());
+          BluetoothGattDescriptor descriptor= characteristic.getDescriptor(UUID.fromString("00002902-0000-1000-8000-00805f9b34fb"));
+          if(descriptor!=null){
+              byte[]val=enabled?BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE:BluetoothGattDescriptor.DISABLE_NOTIFICATION_VALUE;
+              descriptor.setValue(val);
+              mBluetoothGatt.writeDescriptor(descriptor);
+          }
+          descripe=false;
+      }
+  }
     }
 
     /**
@@ -315,5 +341,8 @@ public class BluetoothLeService extends Service {
         if (mBluetoothGatt == null) return null;
 
         return mBluetoothGatt.getServices();
+    }
+    public void writeCharacteristic(BluetoothGattCharacteristic mNotifyCharacteristic){
+        mBluetoothGatt.writeCharacteristic(mNotifyCharacteristic);
     }
 }

@@ -26,22 +26,25 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.Light">
-        <activity android:name=".ScanModel.ScanActivity"
-            android:theme="@style/Th"
+        <activity android:name=".ScanModel.SetCharastic"></activity>
+        <activity
+            android:name=".ScanModel.ScanActivity"
             android:label="@string/scanmodel"
-            ></activity>
+            android:theme="@style/Th" />
         <activity android:name=".ConnectModel.DeviceScanActivity" />
         <activity
             android:name=".SelecModel"
             android:label="@string/selectmodel"
-            android:theme="@style/Th"
-            >
+            android:theme="@style/Th">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ConnectModel.DeviceControlActivity" />
+        <activity android:name=".ConnectModel.DeviceControlActivity"
+
+            />
 
         <service
             android:name=".ConnectModel.BluetoothLeService"

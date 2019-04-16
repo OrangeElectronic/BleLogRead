@@ -22,24 +22,32 @@ import android.bluetooth.BluetoothGattService;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.bluetoothlegatt.R;
+import com.example.android.bluetoothlegatt.ScanModel.SetCharastic;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import static com.example.android.bluetoothlegatt.tool.FormatConvert.StringHexToByte;
 
 /**
  * For a given BLE device, this Activity provides the user interface to connect, display data,
@@ -139,9 +147,20 @@ public class DeviceControlActivity extends Activity {
                             mBluetoothLeService.readCharacteristic(characteristic);
                         }
                         if ((charaProp | BluetoothGattCharacteristic.PROPERTY_NOTIFY) > 0) {
+                         Log.d("傳送","sendata");
                             mNotifyCharacteristic = characteristic;
-                            mBluetoothLeService.setCharacteristicNotification(
-                                    characteristic, true);
+//                            mBluetoothLeService.setCharacteristicNotification(mNotifyCharacteristic, true);
+//                            mNotifyCharacteristic.setValue(new byte[]{(byte)0x53,(byte)0xED,(byte)0x01,(byte)0xFF,(byte)0xFF,(byte)0xFF,(byte)0xFF,(byte)0xBF,(byte)0x0A});
+//                            mNotifyCharacteristic.setValue(StringHexToByte("53ed02ffffffffbf0a"));
+//                            mBluetoothLeService.writeCharacteristic(mNotifyCharacteristic);
+                            final EditText et=new EditText(DeviceControlActivity.this);
+                            new android.support.v7.app.AlertDialog.Builder(new ContextThemeWrapper(DeviceControlActivity.this, R.style.Theme_AppCompat_DayNight_Dialog)).setTitle("傳入數值").setIcon(android.R.drawable.ic_dialog_info).setView(et).setPositiveButton("确定", new DialogInterface.OnClickListener() {	public void onClick(DialogInterface dialog, int which) {
+                                String input = et.getText().toString();	if (input.equals("")) {		Toast.makeText(DeviceControlActivity.this, "數值不得為空！" + input, Toast.LENGTH_LONG).show();	}	else {
+                                    mBluetoothLeService.setCharacteristicNotification(mNotifyCharacteristic, true);
+                                    mNotifyCharacteristic.setValue(StringHexToByte(input));
+                                    mBluetoothLeService.writeCharacteristic(mNotifyCharacteristic);
+                                }	}	}).setNegativeButton("取消", null).show();
+
                         }
                         return true;
                     }

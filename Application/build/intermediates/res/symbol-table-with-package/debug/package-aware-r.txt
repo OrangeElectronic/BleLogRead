@@ -857,6 +857,7 @@ layout abc_select_dialog_material
 layout actionbar_indeterminate_progress
 layout activity_scan
 layout activity_selec_model
+layout activity_set_charastic
 layout gatt_services_characteristics
 layout listitem_device
 layout notification_action

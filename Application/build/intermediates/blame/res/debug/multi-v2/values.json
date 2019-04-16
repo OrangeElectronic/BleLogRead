@@ -1,23 +1,42 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Jianzhi.wang\\Downloads\\OrangeTxUSB-master (1)\\BluetoothLeGatt\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Jianzhi.wang\\AndroidProject\\BleLogRead\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Jianzhi.wang\\Downloads\\OrangeTxUSB-master (1)\\BluetoothLeGatt\\Application\\src\\main\\res\\values\\template-dimens.xml",
+                    "source": "C:\\Jianzhi.wang\\AndroidProject\\BleLogRead\\Application\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "28,24,23,22,21,20,29",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "959,880,836,791,748,706,1029",
-                        "endColumns": "69,42,43,44,42,41,67",
-                        "endOffsets": "1024,918,875,831,786,743,1092"
+                        "startLines": "15,20,21,23,16,17,18,30,31,32,33,19,22,26,25,27",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "700,973,1022,1136,768,814,880,1444,1494,1550,1594,928,1077,1281,1222,1356",
+                        "endColumns": "66,47,53,82,44,64,46,48,54,42,42,43,57,73,57,59",
+                        "endOffsets": "762,1016,1071,1214,808,874,922,1488,1544,1588,1632,967,1130,1350,1275,1411"
                     },
                     "to": {
-                        "startLines": "296,300,301,302,303,304,328",
+                        "startLines": "382,383,384,385,396,397,398,399,400,401,402,403,408,409,410,411",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "22810,22877,22925,22979,23338,23383,23448,23495,23544,23599,23642,23685,23942,24000,24074,24132",
+                        "endColumns": "66,47,53,82,44,64,46,48,54,42,42,43,57,73,57,59",
+                        "endOffsets": "22872,22920,22974,23057,23378,23443,23490,23539,23594,23637,23680,23724,23995,24069,24127,24187"
+                    }
+                },
+                {
+                    "source": "C:\\Jianzhi.wang\\AndroidProject\\BleLogRead\\Application\\src\\main\\res\\values\\template-styles.xml",
+                    "from": {
+                        "startLines": "24,23,20,22,27,29,34",
                         "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "17465,17758,17801,17845,17890,17933,19406",
-                        "endColumns": "69,42,43,44,42,41,67",
-                        "endOffsets": "17530,17796,17840,17885,17928,17970,19469"
+                        "startOffsets": "840,790,671,735,924,955,1157",
+                        "endLines": "24,23,20,22,27,32,39",
+                        "endColumns": "51,48,60,53,27,12,12",
+                        "endOffsets": "887,834,727,784,947,1149,1435"
+                    },
+                    "to": {
+                        "startLines": "417,1695,1725,1726,1734,1831,1835",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "24634,109020,111224,111284,112009,119745,119941",
+                        "endLines": "417,1695,1725,1726,1734,1834,1840",
+                        "endColumns": "50,47,59,52,26,12,12",
+                        "endOffsets": "24680,109063,111279,111332,112031,119936,120214"
                     }
                 },
                 {
@@ -59,25 +78,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Jianzhi.wang\\Downloads\\OrangeTxUSB-master (1)\\BluetoothLeGatt\\Application\\src\\main\\res\\values\\template-styles.xml",
-                    "from": {
-                        "startLines": "24,23,20,22,27,29,34",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "816,767,651,713,897,926,1123",
-                        "endLines": "24,23,20,22,27,32,39",
-                        "endColumns": "51,48,60,53,27,12,12",
-                        "endOffsets": "863,811,707,762,920,1117,1396"
-                    },
-                    "to": {
-                        "startLines": "417,1695,1725,1726,1734,1831,1835",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "24634,109020,111224,111284,112009,119745,119941",
-                        "endLines": "417,1695,1725,1726,1734,1834,1840",
-                        "endColumns": "50,47,59,52,26,12,12",
-                        "endOffsets": "24680,109063,111279,111332,112031,119936,120214"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Jianzhi.wang\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\3c7af3b40a6049473e9886c41fa42f9c\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10",
@@ -92,25 +92,6 @@
                         "startOffsets": "9456,107770,107946,108068,108330,108525",
                         "endColumns": "88,65,121,60,65,66",
                         "endOffsets": "9540,107831,108063,108124,108391,108587"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Jianzhi.wang\\Downloads\\OrangeTxUSB-master (1)\\BluetoothLeGatt\\Application\\src\\main\\res\\values\\base-strings.xml",
-                    "from": {
-                        "startLines": "18,21,20,19",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "647,789,746,700",
-                        "endLines": "18,30,20,19",
-                        "endColumns": "52,13,42,45",
-                        "endOffsets": "695,1060,784,741"
-                    },
-                    "to": {
-                        "startLines": "381,386,404,406",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "22757,23062,23729,23825",
-                        "endLines": "381,395,404,406",
-                        "endColumns": "52,13,42,45",
-                        "endOffsets": "22805,23333,23767,23866"
                     }
                 },
                 {
@@ -150,20 +131,39 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Jianzhi.wang\\Downloads\\OrangeTxUSB-master (1)\\BluetoothLeGatt\\Application\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\Jianzhi.wang\\AndroidProject\\BleLogRead\\Application\\src\\main\\res\\values\\template-dimens.xml",
                     "from": {
-                        "startLines": "15,20,21,23,16,17,18,30,31,32,33,19,22,26,25,27",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "685,953,1001,1113,752,797,862,1414,1463,1518,1561,909,1055,1255,1197,1329",
-                        "endColumns": "66,47,53,82,44,64,46,48,54,42,42,43,57,73,57,59",
-                        "endOffsets": "747,996,1050,1191,792,857,904,1458,1513,1556,1599,948,1108,1324,1250,1384"
+                        "startLines": "28,24,23,22,21,20,29",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "987,904,859,813,769,726,1058",
+                        "endColumns": "69,42,43,44,42,41,67",
+                        "endOffsets": "1052,942,898,853,807,763,1121"
                     },
                     "to": {
-                        "startLines": "382,383,384,385,396,397,398,399,400,401,402,403,408,409,410,411",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "22810,22877,22925,22979,23338,23383,23448,23495,23544,23599,23642,23685,23942,24000,24074,24132",
-                        "endColumns": "66,47,53,82,44,64,46,48,54,42,42,43,57,73,57,59",
-                        "endOffsets": "22872,22920,22974,23057,23378,23443,23490,23539,23594,23637,23680,23724,23995,24069,24127,24187"
+                        "startLines": "296,300,301,302,303,304,328",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "17465,17758,17801,17845,17890,17933,19406",
+                        "endColumns": "69,42,43,44,42,41,67",
+                        "endOffsets": "17530,17796,17840,17885,17928,17970,19469"
+                    }
+                },
+                {
+                    "source": "C:\\Jianzhi.wang\\AndroidProject\\BleLogRead\\Application\\src\\main\\res\\values\\base-strings.xml",
+                    "from": {
+                        "startLines": "18,21,20,19",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "665,810,766,719",
+                        "endLines": "18,30,20,19",
+                        "endColumns": "52,13,42,45",
+                        "endOffsets": "713,1090,804,760"
+                    },
+                    "to": {
+                        "startLines": "381,386,404,406",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "22757,23062,23729,23825",
+                        "endLines": "381,395,404,406",
+                        "endColumns": "52,13,42,45",
+                        "endOffsets": "22805,23333,23767,23866"
                     }
                 },
                 {
